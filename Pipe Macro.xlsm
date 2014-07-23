@@ -1,14 +1,19 @@
 Sub AddPipeToCell()
     Dim CellValue As String
-    For j = 13 To 100 'number of columns affected
-        For i = 7 To 4000 'number of rows affected
-            CellValue = ActiveSheet.Cells(i, j).Value
+    Dim i As Integer
+    Dim j As Integer
+    i = Application.InputBox(prompt:="Enter the x position of the cell you want to start at:", Type:=1)
+    j = Application.InputBox(prompt:="Enter the y position of the cell you want to start at:", Type:=1)
+    For x = j To 100 'number of columns affected
+        For y = i To 400 'number of rows affected
+            CellValue = ActiveSheet.Cells(y, x).Value
             If CellValue <> "" Then
-                ActiveSheet.Cells(i, j).Value = "|" + CellValue
+                ActiveSheet.Cells(y, x).Value = "|" + CellValue
             Else
-                ActiveSheet.Cells(i, j).Value = ""
+                ActiveSheet.Cells(y, x).Value = ""
             End If
         
-        Next i
-    Next j
+        Next y
+    Next x
 End Sub
+
