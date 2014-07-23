@@ -2,8 +2,12 @@ Sub AddPipeToCell()
     Dim CellValue As String
     Dim i As Integer
     Dim j As Integer
+    Dim AffectedRows As Integer
+    Dim AffectedCols As Integer
     i = Application.InputBox(prompt:="Enter the x position of the cell you want to start at:", Type:=1)
     j = Application.InputBox(prompt:="Enter the y position of the cell you want to start at:", Type:=1)
+    AffectedRows = Application.InputBox(Prompt:="Enter the number of rows you want affected:", Type:=1)
+    AffectedCols = Application.InputBox(Prompt:="Enter the number of columns you want affected:", Type:=1)
     For x = j To 100 'number of columns affected
         For y = i To 400 'number of rows affected
             CellValue = ActiveSheet.Cells(y, x).Value
